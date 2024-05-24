@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+/* --- Estilos generales --- */
+body{
+    background-color: rgb(176, 174, 174);
+}
+
+.contenedor{
+    width: 100%;
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* --- Estilos para la cabecera --- */
+.cabecera{
+    font-size: 25px;
+    background-color: gray;
+    gap: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/* --- Estilos para el buscador --- */
+.busqueda{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    gap: 5%
+}
+
+.busqueda .buscador{
+    width: 40%;
+    padding: 1%;
+    border-radius: 10px;
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.busqueda .botonmodal {
+    width: 10%;
+    border-radius: 10px;
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* --- Estilos para las tarjetas y su disposición --- */
+.clientes {
+    width: 80%;
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 1%;
+    margin-left: 10%;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.tarjeta {
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.fotocliente {
+    width: 50%;
+    height: 100%;
+}
+
+.fotocliente img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+}
+
+.datoscliente {
+    width: 50%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 7.5%;
+}
+
+.nombrecliente {
+    font-size: 30px;
+    text-align: center;
+}
+
+.apellidoscliente {
+    font-size: 16px;
+    text-align: center;
+}
+
+.descripcioncliente {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.borrar input {
+    padding: 3%;
+    color: white;
+    background-color: rgb(161, 43, 43);
+    border-radius: 5px;
+    border: solid 1px rgb(219, 40, 40);
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 22.5%;
+    cursor: pointer;
+}
+
+/* --- Estilos para el modal --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modalcontenido {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.modalcontenido input{
+    width: 100%;
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    width: 5%;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.añadir {
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1%;
+    margin-top: 5%;
+}
+
+/* --- Estilos para el footer --- */
+footer {
+    margin-top: 3%;
+    background-color: gray;
+    padding-top: 0.25%;
+    padding-bottom: 0.25%;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}

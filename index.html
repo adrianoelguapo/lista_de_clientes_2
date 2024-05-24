@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>LISTA DE CLIENTES - ADRIANO</title>
+        
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div class = "contenedor">
+
+            <div class = "cabecera">
+
+                <div class = "opcion">
+    
+                    <p>Sobre nosotros</p>
+    
+                </div>
+    
+                <div class = "opcion">
+    
+                    <p>Productos</p>
+    
+                </div>
+    
+                <div class = "opcion">
+    
+                    <p>Clientes</p>
+    
+                </div>
+    
+            </div>
+    
+            <div class = "busqueda">
+    
+                <input class = "buscador" type = "text" placeholder = "Buscar por nombre del cliente">
+                <button class = "botonmodal">Añadir Cliente</button>
+    
+            </div>
+
+                <div class = "clientes">
+
+                    <!--Aquí van las tarjetas de los clientes -->
+    
+                </div> 
+
+            <footer>
+
+                <p>Adriano SL. Todos los derechos reservados</p>
+    
+            </footer>
+
+            <div id = "modalañadircliente" class = "modal">
+
+                <div class = "modalcontenido">
+
+                    <span class = "cerrar">&times;</span>
+
+                    <form id = "formularioañadir">
+                        <label for = "nombre">Nombre:</label>
+                        <input type = "text" id = "nombre" name = "nombre" required>
+                        <label for = "apellidos">Apellidos:</label>
+                        <input type = "text" id = "apellidos" name = "apellidos" required>
+                        <label for = "descripcion">Descripción:</label>
+                        <input type = "text" id = "descripcion" name = "descripcion" required>
+                        <label for = "foto">Foto URL:</label>
+                        <input type = "text" id = "foto" name = "foto" required>
+                        <button  class = "añadir" type = "submit">Añadir Cliente</button>
+                    </form>
+
+                </div>
+
+            </div>
+            
+
+        </div>
+
+        <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src = "./main.js"></script>
+
+    </body>
+
+</html>
