@@ -164,8 +164,7 @@ body{
     font-weight: bold;
 }
 
-.cerrar:hover,
-.cerrar:focus {
+.cerrar:hover{
     width: 5%;
     color: black;
     text-decoration: none;
@@ -176,8 +175,9 @@ body{
     font-family: "Questrial", sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding: 1%;
+    padding: 1.5%;
     margin-top: 5%;
+    border-radius: 5px;
 }
 
 /* --- Estilos para el footer --- */

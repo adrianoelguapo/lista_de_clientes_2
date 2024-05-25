@@ -76,15 +76,20 @@ let clientes = [
         descripcion: "Cliente 11 de la mejor empresa del mundo",
         foto: "./images/david.webp"
     }
-]
+];
 
 $(function(){
 
-    for (let i = 0; i < clientes.length; i++){
-        $(".clientes").append('<div class = "tarjeta" id = "' + clientes[i].id + '" >' + '<div class = "fotocliente">' + '<img src = "' + clientes[i].foto + '">' + '</div>' + '<div class = "datoscliente">' + '<div class = "nombrecliente">' + '<p>' + clientes[i].nombre +'</p>' + '</div>' + '<div class = "apellidoscliente">' + '<p>' + clientes[i].apellidos +'</p>' + '</div>' + '<div class = "descripcioncliente">' + '<p>' + clientes[i].descripcion +'</p>' + '</div>' + '<div class = "borrar">'  + '<input type = "button" value = "Borrar usuario">' + '</div>' + '</div>' + '</div>');
+    function cargarClientes(){
+        $(".clientes").empty(); // Vaciar contenedor antes de cargar clientes
+        for (let i = 0; i < clientes.length; i++){
+            $(".clientes").append('<div class = "tarjeta" id = "' + clientes[i].id + '" >' + '<div class = "fotocliente">' + '<img src = "' + clientes[i].foto + '">' + '</div>' + '<div class = "datoscliente">' + '<div class = "nombrecliente">' + '<p>' + clientes[i].nombre +'</p>' + '</div>' + '<div class = "apellidoscliente">' + '<p>' + clientes[i].apellidos +'</p>' + '</div>' + '<div class = "descripcioncliente">' + '<p>' + clientes[i].descripcion +'</p>' + '</div>' + '<div class = "borrar">'  + '<input type = "button" value = "Borrar usuario">' + '</div>' + '</div>' + '</div>');
+        }
     }
+    
+    cargarClientes();
 
-    $(".borrar").click(function(){
+    $(".clientes").on("click", ".borrar input[type='button']", function(){
         let idClienteBorrar = $(this).closest(".tarjeta").attr("id");
         for (let i = 0; i < clientes.length; i++) {
             if (clientes[i].id == idClienteBorrar) {
@@ -92,29 +97,18 @@ $(function(){
                 break;
             }
         }
-        $("#" + idClienteBorrar).remove();
+        cargarClientes();
     });
 
     $(".buscador").keyup(function(){
-        let valorBusqueda = $(".buscador").val();
+        let valorBusqueda = $(".buscador").val().toLowerCase();
         $(".clientes").empty();
 
         for (let i = 0; i < clientes.length; i++){
-            if (clientes[i].nombre.toLowerCase().includes(valorBusqueda.toLowerCase())){
+            if (clientes[i].nombre.toLowerCase().includes(valorBusqueda)){
                 $(".clientes").append('<div class = "tarjeta" id = "' + clientes[i].id + '" >' + '<div class = "fotocliente">' + '<img src = "' + clientes[i].foto + '">' + '</div>' + '<div class = "datoscliente">' + '<div class = "nombrecliente">' + '<p>' + clientes[i].nombre +'</p>' + '</div>' + '<div class = "apellidoscliente">' + '<p>' + clientes[i].apellidos +'</p>' + '</div>' + '<div class = "descripcioncliente">' + '<p>' + clientes[i].descripcion +'</p>' + '</div>' + '<div class = "borrar">'  + '<input type = "button" value = "Borrar usuario">' + '</div>' + '</div>' + '</div>');
             }
         }
-
-        $(".borrar").click(function(){
-            let idClienteBorrar = $(this).closest(".tarjeta").attr("id");
-            for (let i = 0; i < clientes.length; i++) {
-                if (clientes[i].id == idClienteBorrar) {
-                    clientes.splice(i, 1);
-                    break;
-                }
-            }
-            $("#" + idClienteBorrar).remove();
-        });
     });
 
     var modal = $("#modalañadircliente");
@@ -151,18 +145,7 @@ $(function(){
 
         clientes.push(nuevoCliente);
 
-        $(".clientes").append('<div class = "tarjeta" id = "' + nuevoCliente.id + '" >' + '<div class = "fotocliente">' + '<img src = "' + nuevoCliente.foto + '">' + '</div>' + '<div class = "datoscliente">' + '<div class = "nombrecliente">' + '<p>' + nuevoCliente.nombre +'</p>' + '</div>' + '<div class = "apellidoscliente">' + '<p>' + nuevoCliente.apellidos +'</p>' + '</div>' + '<div class = "descripcioncliente">' + '<p>' + nuevoCliente.descripcion +'</p>' + '</div>' + '<div class = "borrar">'  + '<input type = "button" value = "Borrar usuario">' + '</div>' + '</div>' + '</div>');
-
-        $(".borrar").click(function(){
-            let idClienteBorrar = $(this).closest(".tarjeta").attr("id");
-            for (let i = 0; i < clientes.length; i++) {
-                if (clientes[i].id == idClienteBorrar) {
-                    clientes.splice(i, 1);
-                    break;
-                }
-            }
-            $("#" + idClienteBorrar).remove();
-        });
+        cargarClientes();
 
         modal.hide();
 
